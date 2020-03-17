@@ -1,0 +1,19 @@
+{
+  "name": "marketplace-gateway",
+  "version": "1.0.0",
+  "description": "Federated GQL service that all other marketplace services will sit behind",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reggieross/marketplace-gateway.git"
+  },
+  "author": "Reginald Ross",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reggieross/marketplace-gateway/issues"
+  },
+  "homepage": "https://github.com/reggieross/marketplace-gateway#readme"
+}
