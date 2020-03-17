@@ -1,5 +1,6 @@
 import { ApolloGateway, RemoteGraphQLDataSource } from '@apollo/gateway';
 import { ENV } from './env';
+import {AuthenticatedDataSource} from "./AuthenticatedDateSource";
 
 interface ServiceInfo {
   name: string;
@@ -20,10 +21,8 @@ const serviceList: ServiceInfo[] = [
 export const gateway = new ApolloGateway({
   serviceList: serviceList,
   buildService({ url }) {
-    return new RemoteGraphQLDataSource({
+    return new AuthenticatedDataSource({
       url,
-      willSendRequest<Context>({ request, context }) {
-      },
     });
   },
 });
