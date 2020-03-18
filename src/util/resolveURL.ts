@@ -9,7 +9,7 @@ export function resolveURL(serviceName: string, environment: Environment): strin
 }
 
 function resolveHostName(serviceName: string, environment: Environment): string {
-  return `${serviceName}.herokuapp.com/healthy`
+  return `${serviceName}.herokuapp.com`
 }
 
 function isLocal(serviceName: string) {

@@ -11,7 +11,7 @@ interface ServiceInfo {
 const serviceList: ServiceInfo[] = [
   {
     name: 'catalog-gql',
-    url: resolveURL('catalog-gql', ENV.ENVIRONMENT as Environment),
+    url: `${resolveURL('catalog-gql', ENV.ENVIRONMENT as Environment)}/graphql`,
   },
   // {
   //   name: 'user-gql',

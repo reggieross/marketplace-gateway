@@ -20,6 +20,6 @@ app.use(authentication);
 
 server.applyMiddleware({ app, path: '/graphql' });
 
-app.listen({ port: ENV.RUN_PORT }, () => {
-  console.log(`listening at :${ENV.RUN_PORT}...`);
+app.listen({ port: ENV.PORT }, () => {
+  console.log(`listening at :${ENV.PORT}...`);
 });
