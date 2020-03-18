@@ -1,6 +1,7 @@
 import { ApolloGateway, RemoteGraphQLDataSource } from '@apollo/gateway';
 import { ENV } from './env';
 import {AuthenticatedDataSource} from "./AuthenticatedDateSource";
+import {Environment, resolveURL} from "./util/resolveURL";
 
 interface ServiceInfo {
   name: string;
@@ -10,12 +11,12 @@ interface ServiceInfo {
 const serviceList: ServiceInfo[] = [
   {
     name: 'catalog-gql',
-    url: `http://localhost:5001/graphql`,
+    url: resolveURL('catalog-gql', ENV.ENVIRONMENT as Environment),
   },
-  {
-    name: 'user-gql',
-    url: `https://localhost:5002/graphql`,
-  },
+  // {
+  //   name: 'user-gql',
+  //   url: `https://localhost:5002/graphql`,
+  // },
 ];
 
 export const gateway = new ApolloGateway({
