@@ -19,6 +19,8 @@ const serviceList: ServiceInfo[] = [
   // },
 ];
 
+console.log(serviceList);
+
 export const gateway = new ApolloGateway({
   serviceList: serviceList,
   buildService({ url }) {
