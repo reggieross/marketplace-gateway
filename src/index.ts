@@ -9,8 +9,6 @@ const app = express();
 app.use(cors());
 app.use(cookieParser());
 
-app.use(authentication);
-
 app.use('/healthy', async (req, res) => {
   res.send({
     message: 'Marketplace Gateway Healthy',
