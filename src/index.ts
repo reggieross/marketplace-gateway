@@ -2,20 +2,19 @@ import { ENV } from './env';
 import * as express from 'express';
 import * as cors from 'cors';
 import * as cookieParser from 'cookie-parser';
-import {authentication} from "./middleware/Authentication";
-import {server} from "./server";
+import { authentication } from './middleware/authentication';
+import { server } from './server';
 
 const app = express();
 app.use(cors());
 app.use(cookieParser());
+app.use(authentication);
 
 app.use('/healthy', async (req, res) => {
   res.send({
     message: 'Marketplace Gateway Healthy',
   });
 });
-
-app.use(authentication);
 
 server.applyMiddleware({ app, path: '/graphql' });
 console.log(process.env.NODE_ENV);
