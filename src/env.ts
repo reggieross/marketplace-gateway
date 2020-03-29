@@ -1,6 +1,6 @@
 export const ENV = {
   PORT: process.env.PORT || '5000',
-  ENVIRONMENT: process.env.ENVIRONMENT || 'dev',
+  ENVIRONMENT: process.env.ENVIRONMENT || 'local',
   LOCAL_GQL: process.env.LOCAL_GQL,
   LOCAL_GQL_URL: process.env.LOCAL_GQL_URL,
   SERVICE_USERNAME: process.env.SERVICE_USERNAME,

@@ -8,6 +8,7 @@ import { server } from './server';
 const app = express();
 app.use(cors());
 app.use(cookieParser());
+
 app.use(authentication);
 
 app.use('/healthy', async (req, res) => {
@@ -17,7 +18,6 @@ app.use('/healthy', async (req, res) => {
 });
 
 server.applyMiddleware({ app, path: '/graphql' });
-console.log(process.env.NODE_ENV);
 
 app.listen({ port: ENV.PORT }, () => {
   console.log(`listening at :${ENV.PORT}...`);
