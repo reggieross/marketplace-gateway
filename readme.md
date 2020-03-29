@@ -15,6 +15,11 @@ Marketplace Gateway
     federated server will crash.
         - We can pull the most current gateway image and before pushing, run docker compose and inject the
         local service image. If it successfully spins up we know there aren't any breaking schema changes
+- Authorization & Authentication
+    - Authentication will happen at this level.
+        - We will inspect the request when it comes in and look for an `access_token` in the cookie
+        - Once we have validated the token we will decode it and get the users roles and pass those to down stream services
+            - It is up to down stream services to define what endpoints need a specific role
     
 ### Running project
 - Locally `nodemon` or `npm run build && npm run start`
